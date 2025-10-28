@@ -7,12 +7,16 @@
 <body>
     <h1>Task List</h1>
     {% for task in tasks %}
-        <div>
-            <p>{{task.description}}</p>
-            <p>{{task.status}}</p>
-            <p>{{task.date}}</p>
-        </div>
-    {% endfor %}
-    <a href="#">Add Task</a>
+            <div>
+                <p>{{ task.description }}</p><br>
+                    <p>Статус: {{ task.get_status_display }}</p>
+                    {% if task.date_to_complete %}
+                         <p>До: {{ task.date_to_complete }}</p>
+                    {% else %}
+                         <p>Без срока</p>
+                    {% endif %}
+            </div>
+        {% endfor %}
+    <a href="add/">Add Task</a>
 </body>
 </html>

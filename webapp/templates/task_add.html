@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Новая задача</title>
+</head>
+<body>
+    <h1>Новая задача!</h1>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        <p>
+            <label>Описание</label><br>
+            <textarea name="description" required>{{ old_description|default:'' }}</textarea>
+        </p>
+
+        <p>
+            <label>Статус</label><br>
+            <select name="status" required>
+                {% for value, label in status_choices %}
+                    <option value="{{ value }}"
+                        {% if old_status == value %}selected{% endif %}>
+                        {{ label }}
+                    </option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <p>
+            <label>Дата выполнения</label><br>
+            <input type="text" name="date_to_complete" placeholder="ГГГГ-ММ-ДД" value="{{ old_date_to_complete|default:'' }}">
+        </p>
+
+        <input type="submit" value="Создать">
+    </form>
+
+    <p><a href="/">Назад к списку</a></p>
+</body>
+</html>

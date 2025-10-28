@@ -1,14 +1,15 @@
 from django.db import models
 
+STATUS_CHOICES = [('new', 'Новая'), ('in_progress', 'В процессе'), ('done', 'Сделано')]
+
 
 class Tasks(models.Model):
-    status_choices = [('new', 'Новая'), ('in_progress', 'В процессе'), ('done', 'Сделано')]
 
     description = models.TextField(
         verbose_name='Описание')
     status = models.CharField(
         max_length=20,
-        choices=status_choices,
+        choices=STATUS_CHOICES,
         default='new',
         verbose_name='Статус'
     )
