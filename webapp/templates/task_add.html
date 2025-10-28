@@ -7,7 +7,7 @@
 <body>
     <h1>Новая задача!</h1>
 
-    <form method="post" action="">
+    <form method="post" action="" style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
         {% csrf_token %}
         <p>
             <label>Описание</label><br>
@@ -34,6 +34,6 @@
         <input type="submit" value="Создать">
     </form>
 
-    <p><a href="/">Назад к списку</a></p>
+    <button><a href="/" style="text-decoration: none; color: black">Назад к списку</a></button>
 </body>
 </html>

@@ -7,16 +7,18 @@
 <body>
     <h1>Task List</h1>
     {% for task in tasks %}
-            <div>
-                <p>{{ task.description }}</p><br>
-                    <p>Статус: {{ task.get_status_display }}</p>
-                    {% if task.date_to_complete %}
-                         <p>До: {{ task.date_to_complete }}</p>
+            <div style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
+                <strong>{{ task.description }}</strong><br>
+                <small>
+                    Статус: <strong>{{ task.get_status_display }}</strong>
+                    {% if task.due_date %}
+                        | До: <strong>{{ task.due_date }}</strong>
                     {% else %}
-                         <p>Без срока</p>
+                        | <em>Без срока</em>
                     {% endif %}
+                </small>
             </div>
         {% endfor %}
-    <a href="add/">Add Task</a>
+    <button><a href="add/" style="text-decoration: none; color: black">Add Task</a></button>
 </body>
 </html>
