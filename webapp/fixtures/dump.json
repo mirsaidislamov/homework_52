@@ -1,0 +1,56 @@
+[
+{
+  "model": "webapp.tasks",
+  "pk": 1,
+  "fields": {
+    "description": "Task-1",
+    "status": "new",
+    "date_to_complete": "2025-10-29"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 2,
+  "fields": {
+    "description": "dsvs",
+    "status": "in_progress",
+    "date_to_complete": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 3,
+  "fields": {
+    "description": "мвыимав",
+    "status": "new",
+    "date_to_complete": "2025-10-29"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 4,
+  "fields": {
+    "description": "Task-2",
+    "status": "in_progress",
+    "date_to_complete": "2025-10-29"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$3kqRxcWwq2ElPWNnF4qWz9$uCCe3r2YSsNiCSfWhVVCItP7ho0EZK1Hqchzv+3mRrM=",
+    "last_login": "2025-10-27T10:29:25.038Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-10-27T10:28:57.015Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
