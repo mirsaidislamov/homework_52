@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Tasks, STATUS_CHOICES
 from datetime import datetime
 
@@ -35,18 +35,16 @@ def task_create_view(request):
                 return render(request, 'task_add.html')
 
         try:
-            Tasks.objects.create(
+            task = Tasks.objects.create(
                 description=description,
                 status=status,
                 date_to_complete=date_to_complete,
                 detailed_description = detailed_description
             )
+            return redirect('task_detail', pk=task.pk)
         except Exception:
-            return render(request, 'task_add.html')
+            return redirect('task_create')
 
-        tasks = Tasks.objects.all()
-        return render(request, 'task_add.html', {
-            'tasks': tasks})
 
 def task_detail_view(request, *args, pk, **kwargs):
     task =get_object_or_404(Tasks, pk=pk)

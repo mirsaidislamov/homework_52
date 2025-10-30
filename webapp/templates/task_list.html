@@ -16,10 +16,10 @@
                     {% else %}
                         <em>Без срока</em>
                     {% endif %}
-                <a href="task/{{ task.id }}">Подробнее...</a>
+                <a href="{% url 'task_detail' pk=task.id %}">Подробнее...</a>
                 </small>
             </div>
         {% endfor %}
-    <button><a href="add/" style="text-decoration: none; color: black">Add Task</a></button>
+    <button><a href="{% url 'task_create' %}" style="text-decoration: none; color: black">Добавить задачу</a></button>
 </body>
 </html>
