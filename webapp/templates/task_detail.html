@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
+        <strong>Задача: {{ task.description }}</strong>
+        <p>Статус: {{ task.get_status_display }}</p>
+        {% if task.date_to_complete %}
+            <p> Дата завершения: {{ task.date_to_complete }}</p>
+        {% else %}
+            <em>Без срока</em><br>
+        {% endif %}
+        {% if task.detailed_description %}
+            <p> Детальное описание: {{ task.detailed_description }}</p>
+        {% else %}
+            <em>Без описания</em>
+        {% endif %}
+    </div>
+</body>
+</html>

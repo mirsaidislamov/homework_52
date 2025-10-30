@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Tasks, STATUS_CHOICES
 from datetime import datetime
 
@@ -19,14 +19,10 @@ def task_create_view(request):
         description = request.POST.get('description')
         status = request.POST.get('status')
         date_to_complete_str = request.POST.get('date_to_complete')
+        detailed_description = request.POST.get('detailed_description')
 
         if not description:
-            return render(request, 'task_add.html', {
-                'status_choices': STATUS_CHOICES,
-                'old_description': description,
-                'old_status': status,
-                'old_date_to_complete': date_to_complete_str
-            })
+            return render(request, 'task_add.html')
 
         if status not in [s[0] for s in STATUS_CHOICES]:
             status = 'new'
@@ -36,30 +32,22 @@ def task_create_view(request):
             try:
                 date_to_complete = datetime.strptime(date_to_complete_str, '%Y-%m-%d').date()
             except ValueError:
-                return render(request, 'task_add.html', {
-                    'status_choices': STATUS_CHOICES,
-                    'old_description': description,
-                    'old_status': status,
-                    'old_date_to_complete': date_to_complete_str
-                })
+                return render(request, 'task_add.html')
 
         try:
             Tasks.objects.create(
                 description=description,
                 status=status,
-                date_to_complete=date_to_complete
+                date_to_complete=date_to_complete,
+                detailed_description = detailed_description
             )
         except Exception:
-            return render(request, 'task_add.html', {
-                'status_choices': STATUS_CHOICES,
-                'old_description': description,
-                'old_status': status,
-                'old_date_to_complete': date_to_complete_str
-            })
+            return render(request, 'task_add.html')
 
         tasks = Tasks.objects.all()
         return render(request, 'task_add.html', {
-            'tasks': tasks,
-            'success': 'Задача успешно добавлена!'
-        })
+            'tasks': tasks})
 
+def task_detail_view(request, *args, pk, **kwargs):
+    task =get_object_or_404(Tasks, pk=pk)
+    return render(request, 'task_detail.html', {'task': task})

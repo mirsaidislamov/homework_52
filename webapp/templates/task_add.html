@@ -11,7 +11,7 @@
         {% csrf_token %}
         <p>
             <label>Описание</label><br>
-            <textarea name="description" required>{{ old_description|default:'' }}</textarea>
+            <textarea name="description" required>{{ description|default:'' }}</textarea>
         </p>
 
         <p>
@@ -28,7 +28,12 @@
 
         <p>
             <label>Дата выполнения</label><br>
-            <input type="text" name="date_to_complete" placeholder="ГГГГ-ММ-ДД" value="{{ old_date_to_complete|default:'' }}">
+            <input type="text" name="date_to_complete" placeholder="ГГГГ-ММ-ДД" value="{{ date_to_complete|default:'' }}">
+        </p>
+
+        <p>
+            <label>Детальное описание:</label><br>
+            <textarea type="text" name="detailed_description"{{ detailed_description|default:'' }}></textarea>
         </p>
 
         <input type="submit" value="Создать">

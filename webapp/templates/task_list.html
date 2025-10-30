@@ -11,11 +11,12 @@
                 <strong>{{ task.description }}</strong><br>
                 <small>
                     Статус: <strong>{{ task.get_status_display }}</strong>
-                    {% if task.due_date %}
-                        | До: <strong>{{ task.due_date }}</strong>
+                    {% if task.date_to_complete %}
+                        До: <strong>{{ task.date_to_complete }}</strong>
                     {% else %}
-                        | <em>Без срока</em>
+                        <em>Без срока</em>
                     {% endif %}
+                <a href="task/{{ task.id }}">Подробнее...</a>
                 </small>
             </div>
         {% endfor %}
