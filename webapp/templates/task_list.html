@@ -4,19 +4,22 @@
 
 {% block content %}
     <h1>Task List</h1>
-    {% for task in tasks %}
-            <div style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
-                <strong>{{ task.description }}</strong><br>
-                <small>
-                    Статус: <strong>{{ task.get_status_display }}</strong>
-                    {% if task.date_to_complete %}
-                        До: <strong>{{ task.date_to_complete }}</strong>
-                    {% else %}
-                        <em>Без срока</em>
-                    {% endif %}
-                <a href="{% url 'task_detail' pk=task.id %}">Подробнее...</a>
-                </small>
+    <div class="row row-cols-2 row-cols-md-4">
+        {% for task in tasks %}
+            <div class="col">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ task.description }}</h5>
+                        <p class="card-text">{{ task.get_status_display }}</p>
+                        {% if task.date_to_complete %}
+                            <p class="card-text">{{ task.date_to_complete }}</p>
+                        {% else %}
+                            <p class="card-text">Без срока</p>
+                        {% endif %}
+                        <a href="{% url 'task_detail' pk=task.id %}" class="btn btn-primary btn-sm">Подробнее...</a>
+                    </div>
+                </div>
             </div>
         {% endfor %}
-    <button><a href="{% url 'task_create' %}" style="text-decoration: none; color: black">Добавить задачу</a></button>
+    </div>
 {% endblock %}

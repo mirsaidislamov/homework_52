@@ -3,18 +3,20 @@
 {% block title %}Task {{ task.id }}{% endblock %}
 
 {% block content %}
-    <div style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
-        <strong>Задача: {{ task.description }}</strong>
-        <p>Статус: {{ task.get_status_display }}</p>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Задача: {{ task.description }}</h5>
+        <p class="card-text">Статус: {{ task.get_status_display }}</p>
         {% if task.date_to_complete %}
-            <p> Дата завершения: {{ task.date_to_complete }}</p>
+            <p class="card-text">Дата завершения: {{ task.date_to_complete }}</p>
         {% else %}
-            <em>Без срока</em><br>
+            <p class="card-text">Без срока</p>
         {% endif %}
         {% if task.detailed_description %}
-            <p> Детальное описание: {{ task.detailed_description }}</p>
+            <p class="card-text">Детальное описание: {{ task.detailed_description }}</p>
         {% else %}
-            <em>Без описания</em>
+            <p class="card-text">Без описания</p>
         {% endif %}
-    </div>
+      </div>
+</div>
 {% endblock %}
