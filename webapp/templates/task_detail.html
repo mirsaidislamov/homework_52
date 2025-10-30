@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Task {{ task.id }}{% endblock %}
+
+{% block content %}
     <div style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
         <strong>Задача: {{ task.description }}</strong>
         <p>Статус: {{ task.get_status_display }}</p>
@@ -19,5 +17,4 @@
             <em>Без описания</em>
         {% endif %}
     </div>
-</body>
-</html>
+{% endblock %}

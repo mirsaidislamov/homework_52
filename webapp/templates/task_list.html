@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tasks</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
     <h1>Task List</h1>
     {% for task in tasks %}
             <div style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
@@ -21,5 +19,4 @@
             </div>
         {% endfor %}
     <button><a href="{% url 'task_create' %}" style="text-decoration: none; color: black">Добавить задачу</a></button>
-</body>
-</html>
+{% endblock %}

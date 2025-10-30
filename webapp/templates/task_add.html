@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Новая задача</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Add Task{% endblock %}
+
+{% block content %}
     <h1>Новая задача!</h1>
 
     <form method="post" action="" style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
@@ -40,5 +38,4 @@
     </form>
 
     <button><a href="/" style="text-decoration: none; color: black">Назад к списку</a></button>
-</body>
-</html>
+{% endblock %}
