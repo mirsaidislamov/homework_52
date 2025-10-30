@@ -5,34 +5,38 @@
   "fields": {
     "description": "Task-1",
     "status": "new",
-    "date_to_complete": "2025-10-29"
+    "date_to_complete": "2025-10-29",
+    "detailed_description": "Random detailed description 1"
   }
 },
 {
   "model": "webapp.tasks",
   "pk": 2,
   "fields": {
-    "description": "dsvs",
+    "description": "Task-2",
     "status": "in_progress",
-    "date_to_complete": null
+    "date_to_complete": null,
+    "detailed_description": "Random detailed description 2"
   }
 },
 {
   "model": "webapp.tasks",
   "pk": 3,
   "fields": {
-    "description": "мвыимав",
+    "description": "Task-3",
     "status": "new",
-    "date_to_complete": "2025-10-29"
+    "date_to_complete": "2025-10-29",
+    "detailed_description": ""
   }
 },
 {
   "model": "webapp.tasks",
   "pk": 4,
   "fields": {
-    "description": "Task-2",
+    "description": "Task-4",
     "status": "in_progress",
-    "date_to_complete": "2025-10-29"
+    "date_to_complete": "2025-10-29",
+    "detailed_description": ""
   }
 },
 {

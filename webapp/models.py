@@ -18,6 +18,11 @@ class Tasks(models.Model):
         blank=True,
         verbose_name='Дата выполнения'
     )
+    detailed_description = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name='Детальное описание'
+    )
 
     def __str__(self):
         return f'{self.description} {self.status}'
