@@ -40,6 +40,66 @@
   }
 },
 {
+  "model": "webapp.tasks",
+  "pk": 5,
+  "fields": {
+    "description": "Task-5",
+    "status": "new",
+    "date_to_complete": "2025-10-29",
+    "detailed_description": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 6,
+  "fields": {
+    "description": "Task-6",
+    "status": "new",
+    "date_to_complete": null,
+    "detailed_description": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 7,
+  "fields": {
+    "description": "Task-7",
+    "status": "new",
+    "date_to_complete": null,
+    "detailed_description": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 10,
+  "fields": {
+    "description": "Task-8",
+    "status": "new",
+    "date_to_complete": "2025-10-29",
+    "detailed_description": "Random detailed description 8"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 11,
+  "fields": {
+    "description": "Task-9",
+    "status": "new",
+    "date_to_complete": null,
+    "detailed_description": ""
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 12,
+  "fields": {
+    "description": "Task-10",
+    "status": "new",
+    "date_to_complete": null,
+    "detailed_description": ""
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
