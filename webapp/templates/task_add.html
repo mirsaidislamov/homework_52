@@ -5,36 +5,8 @@
 {% block content %}
     <h1>Новая задача!</h1>
 
-    <form method="post" action="" style="border: 1px solid #ccc; border-radius: 7px; margin: 10px 0; padding: 10px;">
-        {% csrf_token %}
-        <p>
-            <label>Описание</label><br>
-            <textarea name="description" required>{{ description|default:'' }}</textarea>
-        </p>
-
-        <p>
-            <label>Статус</label><br>
-            <select name="status" required>
-                {% for value, label in status_choices %}
-                    <option value="{{ value }}"
-                        {% if old_status == value %}selected{% endif %}>
-                        {{ label }}
-                    </option>
-                {% endfor %}
-            </select>
-        </p>
-
-        <p>
-            <label>Дата выполнения</label><br>
-            <input type="text" name="date_to_complete" placeholder="ГГГГ-ММ-ДД" value="{{ date_to_complete|default:'' }}">
-        </p>
-
-        <p>
-            <label>Детальное описание:</label><br>
-            <textarea type="text" name="detailed_description"{{ detailed_description|default:'' }}></textarea>
-        </p>
-
-        <input type="submit" value="Создать">
+    <form method="POST" action="">
+        {% include 'partial/task_form.html' with button_name='Создать' %}
     </form>
 
 {% endblock %}
