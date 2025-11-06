@@ -17,7 +17,8 @@
         {% else %}
             <p class="card-text">Без описания</p>
         {% endif %}
-        <a href="{% url 'task_update' pk=task.id %}" class="btn btn-primary btn-sm">Изменить задачу</a>
+        <a href="{% url 'task_update' pk=task.id %}" class="btn btn-outline-primary btn-sm">Изменить задачу</a>
+        <a href="{% url 'task_delete' pk=task.id %}" class="btn btn-outline-primary btn-sm">Удалить задачу</a>
       </div>
 </div>
 {% endblock %}

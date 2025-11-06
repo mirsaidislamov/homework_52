@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from webapp.models import Tasks
 from webapp.forms import TasksForm
-# from datetime import datetime
 
 
 def task_list_view(request):
@@ -37,7 +36,16 @@ def task_update_view(request, *args, pk, **kwargs):
         else:
             return render(request, 'task_upgate.html', context={'form': form})
 
+def task_delete_view(request, *args, pk, **kwargs):
+    task = get_object_or_404(Tasks, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'task_delete.html', context={'task': task})
+    elif request.method == 'POST':
+        task.delete()
+        tasks = Tasks.objects.all()
+        return render(request,'task_list.html', context={'tasks': tasks})
+
 
 def task_detail_view(request, *args, pk, **kwargs):
-    task =get_object_or_404(Tasks, pk=pk)
+    task = get_object_or_404(Tasks, pk=pk)
     return render(request, 'task_detail.html', {'task': task})
