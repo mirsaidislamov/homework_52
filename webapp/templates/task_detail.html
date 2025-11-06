@@ -17,6 +17,7 @@
         {% else %}
             <p class="card-text">Без описания</p>
         {% endif %}
+        <a href="{% url 'task_update' pk=task.id %}" class="btn btn-primary btn-sm">Изменить задачу</a>
       </div>
 </div>
 {% endblock %}

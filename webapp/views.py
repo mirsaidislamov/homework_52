@@ -24,6 +24,19 @@ def task_create_view(request):
         else:
             return render(request, 'task_add.html', context={'form': form})
 
+def task_update_view(request, *args, pk, **kwargs):
+    task = get_object_or_404(Tasks, pk=pk)
+    if request.method == 'GET':
+        form = TasksForm(instance=task)
+        return render(request, 'task_upgate.html', context={'form': form})
+    elif request.method == 'POST':
+        form = TasksForm(data=request.POST, instance=task)
+        if form.is_valid():
+            task = form.save()
+            return redirect('task_detail',pk=task.id)
+        else:
+            return render(request, 'task_upgate.html', context={'form': form})
+
 
 def task_detail_view(request, *args, pk, **kwargs):
     task =get_object_or_404(Tasks, pk=pk)
