@@ -4,29 +4,9 @@
   "pk": 1,
   "fields": {
     "description": "Task-1",
-    "status": "new",
+    "status": "in_progress",
     "date_to_complete": "2025-10-29",
     "detailed_description": "Random detailed description 1"
-  }
-},
-{
-  "model": "webapp.tasks",
-  "pk": 2,
-  "fields": {
-    "description": "Task-2",
-    "status": "in_progress",
-    "date_to_complete": null,
-    "detailed_description": "Random detailed description 2"
-  }
-},
-{
-  "model": "webapp.tasks",
-  "pk": 3,
-  "fields": {
-    "description": "Task-3",
-    "status": "new",
-    "date_to_complete": "2025-10-29",
-    "detailed_description": ""
   }
 },
 {
@@ -97,6 +77,16 @@
     "status": "new",
     "date_to_complete": null,
     "detailed_description": ""
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 13,
+  "fields": {
+    "description": "Task-11",
+    "status": "new",
+    "date_to_complete": "2025-11-29",
+    "detailed_description": "dsv s"
   }
 },
 {
